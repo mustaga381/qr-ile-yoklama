@@ -1,0 +1,35 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* ✅ Bunlar artık utility sayılır ve @apply ile birbirini referanslayabilir */
+@utility ui-card {
+    @apply rounded-3xl bg-white/75 backdrop-blur-xl shadow-sm ring-1 ring-slate-900/5;
+}
+
+@utility ui-input {
+    @apply w-full rounded-2xl bg-white/85 px-3 py-3 text-slate-900 placeholder:text-slate-400 shadow-sm ring-1 ring-slate-900/10 focus:outline-none focus:ring-4 focus:ring-indigo-200;
+}
+
+@utility ui-select {
+    @apply ui-input;
+}
+
+@utility ui-btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl px-4 py-2.5 font-semibold bg-white/80 hover:bg-white transition ring-1 ring-slate-900/10 active:scale-[0.99];
+}
+
+@utility ui-btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-2xl px-4 py-2.5 font-semibold text-white shadow-sm hover:opacity-95 active:scale-[0.99] transition bg-gradient-to-r from-slate-900 via-indigo-700 to-fuchsia-600;
+}
+
+@utility ui-badge {
+    @apply text-xs rounded-full px-2 py-1 bg-white/70 text-slate-700 ring-1 ring-slate-900/10;
+}
